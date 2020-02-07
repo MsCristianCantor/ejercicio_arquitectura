@@ -19,6 +19,9 @@ class MovieRepository implements MoviesRepositoryInterface
      */
     public function getWithPage(int $page): ?array
     {
-        return Movie::limit(10)->offset($page * 10)->get()->toArray();
+        return Movie::limit(10)
+            ->offset($page * 10)
+            ->get()
+            ->toArray();
     }
 }
