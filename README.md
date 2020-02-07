@@ -14,3 +14,6 @@ Requisitos:
 - PHP, con libertad de elección del framework.
 - Deben simplificar su diseño de tal forma que pueda ser realizado en el tiempo estipulado.
 ```
+
+Solucion:
+![alt text](Architecture.png)
