@@ -1,22 +1,28 @@
 <?php
 
-
 namespace App\Http\Controllers\V1\Movies;
 
-
-use App\Repositories\Contracts\MoviesRepositoryInterface;
+use App\UseCases\Contracts\GetListMoviesUseCaseInterface;
 use Illuminate\Contracts\View\View;
 
+/**
+ * Class MovieController
+ * @package App\Http\Controllers\V1\Movies
+ */
 class MovieController
 {
     /**
-     * @var MoviesRepositoryInterface
+     * @var GetListMoviesUseCaseInterface
      */
-    private $moviesRepository;
+    private $getListMoviesUseCase;
 
-    public function __construct(MoviesRepositoryInterface $moviesRepository)
+    /**
+     * MovieController constructor.
+     * @param GetListMoviesUseCaseInterface $getListMoviesUseCase
+     */
+    public function __construct(GetListMoviesUseCaseInterface $getListMoviesUseCase)
     {
-        $this->moviesRepository = $moviesRepository;
+        $this->getListMoviesUseCase = $getListMoviesUseCase;
     }
 
     /**
@@ -24,7 +30,7 @@ class MovieController
      */
     public function __invoke(): view
     {
-        $data = $this->moviesRepository->getWithPage(2);
+        $data = $this->getListMoviesUseCase->handler();
         return view()->make('movies')->with(['movies' => $data]);
     }
 }
