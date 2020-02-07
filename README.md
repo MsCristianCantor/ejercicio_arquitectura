@@ -15,5 +15,11 @@ Requisitos:
 - Deben simplificar su diseño de tal forma que pueda ser realizado en el tiempo estipulado.
 ```
 
+Integrantes:
+Cristian Cantor
+Jose Jorge Armenta 
+
+Elegimos Clean Architecture por razón de facilidad de implementación, eficiencia y aporta muy buenos beneficios de desacoplar, mantener y escalar. Además, es la qué mejor dominamos por el momento. Para efectos del ejercicio era la  que mejor se ajustaba por tiempo de desarrollo. 
+
 Solucion:
 ![alt text](Architecture.png)
